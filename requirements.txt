@@ -1,0 +1,5 @@
+streamlit
+PyPDF2
+transformers
+torch
+accelerate  # Faster model loading
