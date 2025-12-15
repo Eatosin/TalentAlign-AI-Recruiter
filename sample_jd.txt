@@ -1,0 +1,13 @@
+AI Trainer Technical Reviewer Position (Gramian Consulting Group)
+
+Responsibilities:
+- Technical writing/content creation/curriculum design for AI training.
+- Prompt engineering and LLM evaluation.
+- Dataset curation and reviewing AI outputs for accuracy/bias.
+- Collaborate on assessment processes.
+
+Requirements:
+- Background in AI, physics, or related fields.
+- Skills in prompt engineering, SEO, content creation.
+- Experience with tools like WordPress, Canva, Excel.
+- Strong communication and analytical skills.
