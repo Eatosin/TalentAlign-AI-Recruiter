@@ -95,4 +95,36 @@ if st.button("🔍 Screen Resumes", type="primary"):
     else:
         st.warning("Add a job description and at least one resume.")
 
-st.caption("Local Mistral-7B model – first run downloads model. Built for portfolio; ethical/fair use only.")
+from huggingface_hub import InferenceClient
+
+client = InferenceClient()  # Free, no API key needed for public models
+
+def screen_resumes(jd_text, resume_texts):
+    prompt_template = """
+    [INST] You are a fair, expert recruiter screening blindly (ignore names, gender, age, personal details).
+    Job Description: {jd}
+    
+    For each resume, output ONLY valid JSON like:
+    [{"resume_id": 1, "overall_score": 0-100, "explanation": "2-3 sentences on fit", "strengths": ["item1", "item2"], "gaps": ["item1", "item2"]}, ...]
+    
+    Resumes:
+    {resumes}
+    [/INST]
+    """
+    
+    formatted_resumes = ""
+    for i, text in enumerate(resume_texts):
+        formatted_resumes += f"Resume {i+1}:\n{text[:3500]}\n\n"
+    
+    full_prompt = prompt_template.format(jd=jd_text, resumes=formatted_resumes)
+    
+    with st.spinner("AI screening via Hugging Face API..."):
+        raw_output = client.text_generation(
+            full_prompt,
+            model="mistralai/Mistral-7B-Instruct-v0.2",
+            max_new_tokens=1000,
+            temperature=0.3
+        )
+    
+    # JSON extract/parse same as before
+    ...
