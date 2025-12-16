@@ -14,7 +14,7 @@ Physics Graduate | AI Prompt Engineer | Content Creator
 This standalone project showcases prompt engineering, PDF processing, automation, and ethical AI—perfect for AI Trainer / data annotation roles.
 
 ## Live Demo (Recommended)
-loading...
+[instant live demo](https://unbiased-ai-resume-screener.streamlit.app)
 
 ## Features
 - Upload Job Description (text area)
