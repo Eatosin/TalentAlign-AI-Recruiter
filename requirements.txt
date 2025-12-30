@@ -3,3 +3,4 @@ google-generativeai
 pypdf
 python-dotenv
 pandas
+supabase
